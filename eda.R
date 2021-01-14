@@ -3,7 +3,7 @@ library(tidyverse)
 # Where you see `...` below, this is a cue to replace the dots with missing code.
 
 # 2. loading data
-
+setwd("D:/Users/James Clarke/Documents/GitHub/eda_fev1")
 fev1_data <- read_csv("fev1.csv")
 
 fev1_data$id <- factor(fev1_data$id)
@@ -12,16 +12,18 @@ fev1_data$id <- factor(fev1_data$id)
 
 # for tidyverse users...
 summarise(fev1_data, r = ...)
+cor.test(fev1_data$age, fev1_data$FEV1)
+plot(fev1_data$age, fev1_data$FEV1)
 # but there are many ways to get this answer
 
 # Answer: <discuss linear model assumption>
 
 # 3b. make a scatter plot
 
-ggplot(data = ..., aes(x = ...,
-                       y = ...)) +
+ggplot(data = fev1_data, aes(x = age,
+                       y = FEV1)) +
     geom_point() +
-    xlab(...) + ...
+    xlab("Age (years)") + ylab("Forced Expiration Volume")
 
 # Answer: <discuss linear model assumption>
 
