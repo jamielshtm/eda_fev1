@@ -4,14 +4,14 @@ library(tidyverse)
 
 # 2. loading data
 
-...    <- read_csv("fev1.csv")
+fev1_data <- read_csv("fev1.csv")
 
-...$id <- factor(...$id)
+fev1_data$id <- factor(fev1_data$id)
 
 # 3a. correlation
 
 # for tidyverse users...
-summarise(..., r = ...)
+summarise(fev1_data, r = ...)
 # but there are many ways to get this answer
 
 # Answer: <discuss linear model assumption>
